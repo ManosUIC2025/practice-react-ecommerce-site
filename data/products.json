@@ -1,0 +1,35 @@
+[
+    {
+        "name": "Product 1",
+        "slug": "product-1",
+        "price": 29.99,
+        "images": [
+            "https://placehold.co/100x100",
+            "https://placehold.co/100x100",
+            "https://placehold.co/100x100"
+        ],
+        "description": "This is a great product."
+    },
+    {
+        "name": "Product 2",
+        "slug": "product-2",
+        "price": 29.99,
+        "images": [
+            "https://placehold.co/100x100",
+            "https://placehold.co/100x100",
+            "https://placehold.co/100x100"
+        ],
+        "description": "This is a great product."
+    },
+    {
+        "name": "Product 2",
+        "slug": "product-2",
+        "price": 29.99,
+        "images": [
+            "https://placehold.co/100x100",
+            "https://placehold.co/100x100",
+            "https://placehold.co/100x100"
+        ],
+        "description": "This is a great product."
+    }
+]
