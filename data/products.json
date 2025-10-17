@@ -1,34 +1,73 @@
 [
     {
+        "id": 1,
         "name": "Product 1",
         "slug": "product-1",
-        "price": 29.99,
+        "price": 100.00,
         "images": [
             "https://placehold.co/100x100",
-            "https://placehold.co/100x100",
-            "https://placehold.co/100x100"
+            "https://placehold.co/101x101",
+            "https://placehold.co/102x102"
         ],
         "description": "This is a great product."
     },
     {
+        "id": 2,
         "name": "Product 2",
         "slug": "product-2",
-        "price": 29.99,
+        "price": 200.00,
         "images": [
-            "https://placehold.co/100x100",
-            "https://placehold.co/100x100",
-            "https://placehold.co/100x100"
+            "https://placehold.co/200x200",
+            "https://placehold.co/201x201",
+            "https://placehold.co/202x202"
         ],
         "description": "This is a great product."
     },
     {
-        "name": "Product 2",
-        "slug": "product-2",
-        "price": 29.99,
+        "id": 3,
+        "name": "Product 3",
+        "slug": "product-3",
+        "price": 300.00,
         "images": [
-            "https://placehold.co/100x100",
-            "https://placehold.co/100x100",
-            "https://placehold.co/100x100"
+            "https://placehold.co/300x300",
+            "https://placehold.co/301x301",
+            "https://placehold.co/302x302"
+        ],
+        "description": "This is a great product."
+    },
+    {
+        "id": 4,
+        "name": "Product 4",
+        "slug": "product-4",
+        "price": 400.00,
+        "images": [
+            "https://placehold.co/400x400",
+            "https://placehold.co/401x401",
+            "https://placehold.co/402x402"
+        ],
+        "description": "This is a great product."
+    },
+    {
+        "id": 5,
+        "name": "Product 5",
+        "slug": "product-5",
+        "price": 500.00,
+        "images": [
+            "https://placehold.co/500x500",
+            "https://placehold.co/501x501",
+            "https://placehold.co/502x502"
+        ],
+        "description": "This is a great product."
+    },
+    {
+        "id": 6,
+        "name": "Product 6",
+        "slug": "product-6",
+        "price": 600.00,
+        "images": [
+            "https://placehold.co/600x600",
+            "https://placehold.co/601x601",
+            "https://placehold.co/602x602"
         ],
         "description": "This is a great product."
     }

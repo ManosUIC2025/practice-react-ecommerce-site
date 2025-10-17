@@ -5,22 +5,22 @@ import {motion} from 'framer-motion'
 
 const Hero = () => {
     const variants = {
-        hidden: { opacity: 0.25, y: 70, x:0 },
-        visible: { opacity: 1, y: -10, x:0, transition: { delay:0.05,  duration: 0.5 } },
+        hidden: { opacity: 0.25, y: 30, x:0 },
+        visible: { opacity: 1, y: -80, x:0, transition: { delay:0.05,  duration: 0.5 } },
     };
   return (
-    <div className='w-full md:h-[350px] h-[300px] flex items-center'>
-        <div className='h-full md:max-w-[1024px] max-w-[600px] m-auto flex justify-center mt-[20px] relative px-4 md:px-0'>
-            <div className='object-cover'>
+    <div className='hero-section'>
+        <div className='hero-container'>
+            <div className='object-cover w-full'>
                 <Image
                     src="https://placehold.co/1400x100.png"
                     width="1400"
                     height="100"
                     alt="Hero image"
-                    className='rounded-lg'
+                    className='rounded-lg w-full'
                 />
             </div>
-            <div className='absolute md:mt-[100px] mt-[50px]'>
+            <div className='hero-image'>
                 <motion.div
                     initial="hidden"
                     animate="visible"

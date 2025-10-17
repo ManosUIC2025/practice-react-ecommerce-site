@@ -1,6 +1,7 @@
 import Image from "next/image";
+import { Hero, Products, Navbar } from "./components";
 
-export default async function Home() {
+export default function Home() {
 
     // <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
     //   <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
@@ -99,35 +100,37 @@ export default async function Home() {
     //     </a>
     //   </footer>
     // </div>
-    async function fetchProducts() {
-    // const res = await fetch("http://localhost:8000/products.json");
-    // .then((res) => res.json())
-    // .then(data => {
-    //   products = data;
-    // })
+    // async function fetchProducts() {
+    // // const res = await fetch("http://localhost:8000/products.json");
+    // // .then((res) => res.json())
+    // // .then(data => {
+    // //   products = data;
+    // // })
 
-     try {
-        const response = await fetch("http://localhost:8000/products.json");
-        if (!response.ok) {
-          throw new Error(`Response status: ${response.status}`);
-        }
+    //  try {
+    //     const response = await fetch("http://localhost:8000/products.json");
+    //     if (!response.ok) {
+    //       throw new Error(`Response status: ${response.status}`);
+    //     }
 
-        const result = await response.json();
+    //     const result = await response.json();
 
-        return result;
-      } catch (error) {
-        //console.error(error.message);
-        return null;
-      }
-    }
+    //     return result;
+    //   } catch (error) {
+    //     //console.error(error.message);
+    //     return null;
+    //   }
+    // }
 
-    const products = await fetchProducts();
-    console.log(products);
+    // const products = await fetchProducts();
+    // console.log(products);
 
 
   return (
     <>
-      <h1 className="underline">E-commerce website</h1>
+      {/* <Navbar /> */}
+      <Hero />
+      <Products />
     </>
   );
 }

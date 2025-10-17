@@ -36,7 +36,88 @@
 }
 
 .cart-icon {
-  @apply relative text-[25px];
+  @apply relative text-[25px] hover:cursor-pointer;
+}
+
+.hero-section {
+  @apply w-full md:h-[300px] h-[300px] flex items-center;
+}
+
+.hero-container {
+  @apply h-full md:max-w-[1024px] max-w-[600px] m-auto flex flex-col justify-center mt-[20px] relative px-4 md:px-0;
+}
+
+.hero-image {
+  @apply w-full md:mt-[100px] mt-[50px] px-4 md:px-0;
+}
+
+.product-details-section {
+  @apply w-full md:py-16;
+}
+
+.product-details-container {
+  @apply gap-8 md:max-w-[1024px] m-auto max-w-[600px] px-4 md:px-0 grid md:grid-cols-2 grid-cols-1;
+}
+
+.small-images-container {
+  @apply flex gap-[5px] justify-center;
+}
+
+.quantity-desc {
+  @apply p-[6px] flex border border-black;
+}
+
+.quantity-desc span {
+  @apply text-[16px] cursor-pointer;
+  padding: 6px;
+}
+
+.quantity-desc .num {
+  @apply text-[20px];
+}
+
+.quantity-desc .plus {
+  color: green
+}
+
+.quantity-desc .minus {
+  color: red
+}
+
+.btn {
+  @apply text-black md:w-1/2 md:p-5 px-2 py-1 text-xl font-bold w-full border-4 border-black hover:bg-black hover:text-white duration-300;
+}
+
+.add-to-cart {
+  @apply hover:bg-black hover:text-white duration-300;
+}
+
+.cart-wrapper {
+  @apply fixed top-0 right-[-500px] w-[500px] h-screen bg-white shadow-lg z-50 transition-all duration-300 ease-in-out;
+}
+
+.cart-wrapper.active {
+  @apply right-0;
+}
+
+.cart-container {
+  @apply h-full flex flex-col p-4;
+}
+
+.cart-heading {
+  @apply flex items-center justify-between mb-4;
+}
+
+.cart-close {
+  @apply text-2xl cursor-pointer;
+}
+
+.cart-items {
+  @apply flex-1 overflow-y-auto;
+}
+
+.cart-bottom {
+  @apply border-t border-gray-200 pt-4;
 }
 
 /* :root {
