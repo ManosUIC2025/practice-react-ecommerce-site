@@ -4,9 +4,28 @@ import Image from 'next/image'
 import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai'
 import { CartContext } from '../context/CartContext'
 
-const ProductDetails = ({ product }: any) => {
+interface Product {
+    id: string;
+    name: string;
+    slug: string;
+    price: number;
+    images: string[];
+    description?: string;
+}
+
+interface ProductDetailsProps {
+    product: Product;
+}
+
+const ProductDetails = ({ product }: ProductDetailsProps) => {
     const [index, setIndex] = useState(0);
-    const { cartItems, qty, incQty, decQty, addProduct }: any = useContext(CartContext);
+    const context = useContext(CartContext);
+
+    if (!context) {
+        throw new Error('ProductDetails must be used within a CartProvider');
+    }
+
+    const { cartItems, qty, incQty, decQty, addProduct } = context;
     console.log(cartItems);
 
     function imageLoader() {
