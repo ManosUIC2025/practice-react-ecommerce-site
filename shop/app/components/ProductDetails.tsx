@@ -5,7 +5,7 @@ import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai'
 import { CartContext } from '../context/CartContext'
 
 interface Product {
-    id: string | number;
+    id: number;
     name: string;
     slug: string;
     price: number;

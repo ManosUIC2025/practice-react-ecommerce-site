@@ -72,7 +72,7 @@ import { fetchProducts } from '@/app/utils'
 import { notFound } from 'next/navigation'
 
 interface Product {
-    id: string | number;
+    id: number;
     name: string;
     slug: string;
     price: number;

@@ -5,7 +5,7 @@ import Card from "./Card";
 import { fetchProducts } from "../utils";
 
 interface Product {
-    id: string | number;
+    id: number;
     name: string;
     slug: string;
     price: number;
