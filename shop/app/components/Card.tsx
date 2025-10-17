@@ -2,7 +2,20 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-const Card = ({product}: any) => {
+interface Product {
+  id: number | string;
+  name: string;
+  slug: string;
+  price: number;
+  images: string[];
+  description?: string;
+}
+
+interface CardProps {
+  product: Product;
+}
+
+const Card = ({product}: CardProps) => {
 
   return (
     <Link href={`/product/${product.slug}`}>

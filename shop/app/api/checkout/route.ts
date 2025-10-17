@@ -7,6 +7,14 @@ const stripe = new Stripe(process.env.NEXT_STRIPE_SECRET_KEY!, {
     apiVersion: '2025-09-30.clover',
 })
 
+// Define the cart item interface
+interface CartItem {
+    id: string
+    name: string
+    price: number
+    quantity: number
+}
+
 
 // export async function GET() {
 //     return NextResponse.json({
@@ -20,16 +28,16 @@ export async function POST(request: Request) {
         // const headersList = await headers()
         // const origin = headersList.get('origin')
 
-        const { cartItems } = await request.json()
+        const { cartItems }: { cartItems: CartItem[] } = await request.json()
         let activeProducts = await stripe.products.list({
             active: true
         })
         console.log(activeProducts)
-        let stripeProducts: any[] = []
+        const stripeProducts: Stripe.Checkout.SessionCreateParams.LineItem[] = []
 
         for (const item of cartItems) {
-            const product = activeProducts?.data?.find((p: any) => p.id.toString() === item.id.toString())
-            if (product) {
+            const product = activeProducts?.data?.find((p: Stripe.Product) => p.id.toString() === item.id.toString())
+            if (product && typeof product.default_price === 'string') {
                 stripeProducts.push({
                     price: product.default_price,
                     quantity: item.quantity,
@@ -56,8 +64,8 @@ export async function POST(request: Request) {
             active: true
         })
         for (const item of cartItems) {
-            const product = activeProducts?.data?.find((p: any) => p.id.toString() === item.id.toString())
-            if (product) {
+            const product = activeProducts?.data?.find((p: Stripe.Product) => p.id.toString() === item.id.toString())
+            if (product && typeof product.default_price === 'string') {
                 stripeProducts.push({
                     price: product.default_price,
                     quantity: item.quantity,
@@ -76,10 +84,17 @@ export async function POST(request: Request) {
             throw new Error('Failed to create checkout session')
         }
         return NextResponse.json({ url: session.url })
-    } catch (err: any) {
+    } catch (err) {
+        if (err instanceof Stripe.errors.StripeError) {
+            return NextResponse.json(
+                { error: err.message },
+                { status: err.statusCode || 500 }
+            )
+        }
+        const error = err as Error
         return NextResponse.json(
-            { error: err.message },
-            { status: err.statusCode || 500 }
+            { error: error.message || 'An error occurred' },
+            { status: 500 }
         )
     }
 }

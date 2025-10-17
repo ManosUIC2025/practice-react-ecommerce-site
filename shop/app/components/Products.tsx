@@ -4,6 +4,15 @@ import Link from "next/link";
 import Card from "./Card";
 import { fetchProducts } from "../utils";
 
+interface Product {
+  id: number | string;
+  name: string;
+  slug: string;
+  price: number;
+  images: string[];
+  description?: string;
+}
+
 async function Products() {
     // async function fetchProducts() {
     //     // const res = await fetch("http://localhost:8000/products.json");
@@ -39,7 +48,7 @@ async function Products() {
                     <h1>Enjoy up to 50%</h1>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-2 gap-y-2 mt-6">
-                    {products.map((product: any, index: number) => {
+                    {products.map((product: Product, index: number) => {
                         return (
                             <Card product={product} key={index} />
                         );
