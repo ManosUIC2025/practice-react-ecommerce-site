@@ -2,11 +2,12 @@
 import { createContext, useContext, useState } from "react";
 
 interface Product {
-    id: string;
+    id: string | number;
     name: string;
+    slug: string;
     price: number;
     images: string[];
-    slug: string;
+    description?: string;
 }
 
 interface CartItem extends Product {

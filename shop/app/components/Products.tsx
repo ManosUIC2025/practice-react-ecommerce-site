@@ -5,12 +5,12 @@ import Card from "./Card";
 import { fetchProducts } from "../utils";
 
 interface Product {
-  id: number | string;
-  name: string;
-  slug: string;
-  price: number;
-  images: string[];
-  description?: string;
+    id: string | number;
+    name: string;
+    slug: string;
+    price: number;
+    images: string[];
+    description?: string;
 }
 
 async function Products() {

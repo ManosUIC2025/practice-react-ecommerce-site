@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 interface Product {
-  id: number | string;
+  id: string | number;
   name: string;
   slug: string;
   price: number;
