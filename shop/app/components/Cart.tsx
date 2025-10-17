@@ -22,7 +22,7 @@ const Cart = () => {
   };
 
   const handleUpdateQuantity = (
-    productId: string,
+    productId: number,
     currentQty: number,
     increment: boolean
   ) => {
